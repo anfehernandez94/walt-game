@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://xbmkgw26tp4v"]
+
+[ext_resource type="Script" uid="uid://dn0by2vwunmer" path="res://scripts/enemy_02.gd" id="1_4n8bs"]
+[ext_resource type="Texture2D" uid="uid://3m1q7pudevn2" path="res://assets/sprites/enemy4.png" id="2_4n8bs"]
+[ext_resource type="PackedScene" uid="uid://brhav2qi3ouuf" path="res://scenes/killzone.tscn" id="3_3m726"]
+[ext_resource type="AudioStream" uid="uid://wl7388o3xq35" path="res://assets/audio/sounds/footstep_snow_000.ogg" id="4_g4hox"]
+[ext_resource type="AudioStream" uid="uid://dqclwpm1kwkvu" path="res://assets/audio/sounds/Retro Weapon Laser 03.wav" id="5_vacyw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llxqc"]
+atlas = ExtResource("2_4n8bs")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m726"]
+atlas = ExtResource("2_4n8bs")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4hox"]
+atlas = ExtResource("2_4n8bs")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vacyw"]
+atlas = ExtResource("2_4n8bs")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x7q62"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llxqc")
+}],
+"loop": true,
+"name": &"bullet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llxqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m726")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4hox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vacyw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l530j"]
+size = Vector2(20.0139, 20.5153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n8bs"]
+size = Vector2(45, 62)
+
+[node name="Enemy02" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource("1_4n8bs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x7q62")
+animation = &"bullet"
+autoplay = "idle"
+frame_progress = 0.15862
+
+[node name="Killzone" parent="." instance=ExtResource("3_3m726")]
+position = Vector2(0, 6)
+scale = Vector2(-2.39833, 3.19273)
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(2.84217e-14, 2.42739)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_l530j")
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_g4hox")
+
+[node name="DeadAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vacyw")
+volume_db = -10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 12)
+shape = SubResource("RectangleShape2D_4n8bs")

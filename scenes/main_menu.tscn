@@ -1,0 +1,146 @@
+[gd_scene load_steps=8 format=3 uid="uid://fmrlokc1w88e"]
+
+[ext_resource type="Script" uid="uid://slmr5yibftem" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://kvmp4u6ofv88" path="res://assets/fonts/Kenney Mini Square.ttf" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://bh1c5172uhyu5" path="res://assets/fonts/Kenney Blocks.ttf" id="2_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://bvl447wa05r4i" path="res://scenes/ship.tscn" id="2_wu84c"]
+
+[sub_resource type="Animation" id="Animation_rtw2f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-191, 838)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.42237]
+}
+
+[sub_resource type="Animation" id="Animation_8ln24"]
+resource_name = "move_menu"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 4.86667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-191, 838), Vector2(1521, -69)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 4.86667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.42237, -0.633555]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oa1go"]
+_data = {
+&"RESET": SubResource("Animation_rtw2f"),
+&"move_menu": SubResource("Animation_8ln24")
+}
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ship" parent="MarginContainer" instance=ExtResource("2_wu84c")]
+position = Vector2(-191, 838)
+rotation = -0.42237
+scale = Vector2(0.8, 0.8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/Ship"]
+libraries = {
+&"": SubResource("AnimationLibrary_oa1go")
+}
+autoplay = "move_menu"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0666667, 0.25098, 0.462745, 1)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 82
+text = "Walt"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0666667, 0.25098, 0.462745, 1)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 72
+text = "Nael Mission"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.870588, 1)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 81
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.870588, 1)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 72
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.980392, 0.870588, 1)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 72
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

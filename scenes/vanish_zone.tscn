@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://kiferfchw8o1"]
+
+[ext_resource type="Script" uid="uid://iordpyvsbx6x" path="res://scripts/vanish_zone.gd" id="1_fnu4x"]
+
+[node name="VanishZone" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_fnu4x")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

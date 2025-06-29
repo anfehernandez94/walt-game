@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=3 uid="uid://bvl447wa05r4i"]
+
+[ext_resource type="Texture2D" uid="uid://camar0774egnh" path="res://assets/sprites/ship_fire_transparent.png" id="1_q631a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gnfn"]
+atlas = ExtResource("1_q631a")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tobq"]
+atlas = ExtResource("1_q631a")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfsc7"]
+atlas = ExtResource("1_q631a")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gudjc"]
+atlas = ExtResource("1_q631a")
+region = Rect2(1500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j21i"]
+atlas = ExtResource("1_q631a")
+region = Rect2(2000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m36u"]
+atlas = ExtResource("1_q631a")
+region = Rect2(2500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qiel"]
+atlas = ExtResource("1_q631a")
+region = Rect2(3000, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itrim"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gnfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tobq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfsc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gudjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7j21i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m36u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qiel")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gnfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tobq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfsc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gudjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7j21i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gudjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfsc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tobq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q631a"]
+height = 406.0
+
+[node name="Ship" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_itrim")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.839799
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.23706e-14, 26)
+rotation = 1.5708
+scale = Vector2(7.43526, 0.959019)
+shape = SubResource("CapsuleShape2D_q631a")
