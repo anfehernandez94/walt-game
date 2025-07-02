@@ -1,8 +1,8 @@
 [gd_scene load_steps=27 format=3 uid="uid://o0uiej7xp231"]
 
 [ext_resource type="Script" uid="uid://bawp8d7gq5cgq" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://cfki0tmp7ha01" path="res://assets/sprites/LT Character asset v2.png" id="2_dqkch"]
-[ext_resource type="Texture2D" uid="uid://dwl40hbcr2ivv" path="res://assets/sprites/LT Character asset.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cfki0tmp7ha01" path="res://assets/sprites/characters/LT Character asset v2.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://dwl40hbcr2ivv" path="res://assets/sprites/characters/LT Character asset.png" id="3_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://plgjcj33n1x3" path="res://assets/audio/sounds/spaceTrash5.ogg" id="4_dqkch"]
 [ext_resource type="AudioStream" uid="uid://bbjnfndyi8lmq" path="res://assets/audio/sounds/Retro Charge StereoUP 01.wav" id="5_qlg0r"]
 
@@ -177,11 +177,13 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
+radius = 15.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 5
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -199,6 +201,8 @@ libraries = {
 }
 
 [node name="AttackArea" type="Area2D" parent="." groups=["player_weapon"]]
+collision_layer = 8
+collision_mask = 4
 monitoring = false
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AttackArea"]

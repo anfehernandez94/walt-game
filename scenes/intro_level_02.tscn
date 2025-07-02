@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct4eaojagm6w1"]
+
+[ext_resource type="Script" uid="uid://bcjjyykx2ubbl" path="res://scripts/intro_level_02.gd" id="1_8fwl6"]
+[ext_resource type="Texture2D" uid="uid://dai7wwc1s6tsi" path="res://assets/sprites/characters/avatar_warriotadora.png" id="2_c5oq1"]
+[ext_resource type="Texture2D" uid="uid://bkssiusw8c7n6" path="res://assets/sprites/characters/avatar_walt.png" id="3_3y16o"]
+[ext_resource type="FontFile" uid="uid://c7kus7nlu6egu" path="res://assets/fonts/Minecraftia-Regular.ttf" id="4_4ijp5"]
+[ext_resource type="AudioStream" uid="uid://cnbpm3b8koa73" path="res://assets/audio/music/Metal Heart, Rusted Soul.mp3" id="5_1apq3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kh7wu"]
+bg_color = Color(0.866667, 0.278431, 0.141176, 1)
+
+[node name="IntroLevel02" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8fwl6")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kh7wu")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 504)
+layout_mode = 2
+color = Color(0.137255, 0.117647, 0.239216, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ColorRect2"]
+layout_mode = 2
+offset_left = 196.0
+offset_top = 4.0
+offset_right = 1704.0
+offset_bottom = 504.0
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="AvatarLeft" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ColorRect2/HBoxContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+texture = ExtResource("2_c5oq1")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Space" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ColorRect2/HBoxContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AvatarRight" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/ColorRect2/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("3_3y16o")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_4ijp5")
+theme_override_font_sizes/font_size = 25
+text = "Presiona SPACE para continuar"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+color = Color(0.180392, 0.180392, 0.180392, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1apq3")
+autoplay = true

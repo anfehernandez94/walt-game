@@ -1,7 +1,8 @@
 extends Node2D
 
 @export var enemy_scene: PackedScene = preload("res://scenes/enemy_02.tscn")
-@export var spawn_interval: float = 2  # seconds between spawns
+@export var end_spawn_interval: float = 2  # seconds between spawns
+@export var start_spawn_interval: float = 0.8  # seconds between spawns
 @export var wait_time: float = 0  # seconds between spawns
 @export var next_level: String = "res://levels/level_02.tscn"
 @onready var area_spawner: CollisionShape2D = $StaticBody2D/AreaSpawner
@@ -22,7 +23,10 @@ func _on_timer_timeout():
 	randomize_spawn_interval()
 
 func randomize_spawn_interval():
-	timer.wait_time = randf_range(1, spawn_interval)
+	timer.wait_time = randf_range(start_spawn_interval, end_spawn_interval)
+
+func stop_spawner():
+	timer.stop()
 
 func spawn_enemy():
 	if enemy_scene == null:

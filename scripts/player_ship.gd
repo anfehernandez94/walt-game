@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var fire_offset: Vector2 = Vector2(16, 0)  # Offset from player position
 @onready var fire_timer := Timer.new()
 @onready var shoot_point: Marker2D = $ShootPoint
+@onready var player_collision: CollisionShape2D = $PlayerCollision
 
 const FIRE_TIMER = 0.4
 const SPEED = 300.0
@@ -38,7 +39,7 @@ func _physics_process(delta: float) -> void:
 
 func start_dead():
 	dead_audio.play()
-	#player_collision.queue_free()
+	player_collision.queue_free()
 	#is_dead = true
 	#animated_sprite_2d.play("dead") 
 	

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c0jrdfg02bdnb"
+path="res://.godot/imported/service_time_off.dialogue-2519ba343fd100528864d5882fd99f2d.tres"
+
+[deps]
+
+source_file="res://dialogues/service_time_off.dialogue"
+dest_files=["res://.godot/imported/service_time_off.dialogue-2519ba343fd100528864d5882fd99f2d.tres"]
+
+[params]
+
+defaults=true

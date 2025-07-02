@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dmk5dtpv8smhg"
+path="res://.godot/imported/service_hustle_muscle.dialogue-1860aed3db4d2b39afde5246d5a7c243.tres"
+
+[deps]
+
+source_file="res://dialogues/service_hustle_muscle.dialogue"
+dest_files=["res://.godot/imported/service_hustle_muscle.dialogue-1860aed3db4d2b39afde5246d5a7c243.tres"]
+
+[params]
+
+defaults=true

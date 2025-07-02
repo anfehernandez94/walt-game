@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://qucarv55v55b"]
+
+[ext_resource type="Texture2D" uid="uid://ckjso33ctyrmd" path="res://assets/sprites/characters/Boss ship.png" id="1_3aeg6"]
+[ext_resource type="Script" uid="uid://bo67d2mxgrolh" path="res://scripts/boss_01.gd" id="1_gc8av"]
+[ext_resource type="PackedScene" uid="uid://brhav2qi3ouuf" path="res://scenes/killzone.tscn" id="4_edmuu"]
+[ext_resource type="AudioStream" uid="uid://b8b2prh7ivkfm" path="res://assets/audio/sounds/Retro Explosion Swoshes 04.wav" id="4_xdjus"]
+[ext_resource type="AudioStream" uid="uid://wl7388o3xq35" path="res://assets/audio/sounds/footstep_snow_000.ogg" id="5_edmuu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aeg6"]
+atlas = ExtResource("1_3aeg6")
+region = Rect2(0, 192, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvrky"]
+atlas = ExtResource("1_3aeg6")
+region = Rect2(128, 192, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc8av"]
+atlas = ExtResource("1_3aeg6")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prktt"]
+atlas = ExtResource("1_3aeg6")
+region = Rect2(128, 0, 128, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvrky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aeg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvrky")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc8av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prktt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aeg6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdjus"]
+size = Vector2(29.187, 20.5153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edmuu"]
+size = Vector2(18.7731, 53.8892)
+
+[node name="Boss01" type="CharacterBody2D" groups=["enemy"]]
+position = Vector2(-35, -11)
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_gc8av")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yvrky")
+animation = &"hit"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34, 12)
+shape = SubResource("CircleShape2D_3aeg6")
+
+[node name="Killzone" parent="." instance=ExtResource("4_edmuu")]
+position = Vector2(0, 6)
+scale = Vector2(-2.39833, 3.19273)
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-6.25436, 0.939635)
+shape = SubResource("RectangleShape2D_xdjus")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-9.17305, -16.6002)
+rotation = -2.78754
+scale = Vector2(0.398857, -0.335958)
+skew = 0.225861
+shape = SubResource("RectangleShape2D_edmuu")
+
+[node name="DeadAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xdjus")
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_edmuu")

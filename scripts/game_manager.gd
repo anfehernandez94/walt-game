@@ -15,3 +15,12 @@ func end_level():
 
 func init_level():
 	score = score_last_level
+	
+func fade_in_music(music):
+	var tween = create_tween()
+	music.volume_db = -80 
+	tween.tween_property(music, "volume_db", 0, 1.0)
+
+func fade_out_music(music):
+	var tween = create_tween()
+	tween.tween_property(music, "volume_db", -80, 1.0)

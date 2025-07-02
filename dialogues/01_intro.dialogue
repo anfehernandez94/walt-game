@@ -1,0 +1,17 @@
+~ start
+Warriotadora: [wait=1]¡¡WALT!![wait=1]
+Warriotadora: La nave no enciende
+Walt: Mmm...[wait=1], yo mismo cargue suficientes SERVICIOS para ir hasta el fin del universo.
+Warriotadora: Analizando...
+Warriotadora: Ya sé que sucedio. [wait=0.5] Varios Naelitas se los han llevado.
+Walt: Bueno, tú encontraste el problema, yo encontraré la solución.
+~ info
+Warriotadora: Recuerda que puedes disuadir a los Naelitas con la Lanza del Guerrero usando la tecla J
+Warriotadora: Una última cosa, aprovecha y consigue tantos KUDOS como puedas. Le darán más energía a nuestra nave.
+Warriotadora: ¿Estás listo o quieres que te aclare algo?
+- Repetir información
+	Walt: Llevamos 6 años y siempre se me olvida, repiteme porfa. => info
+- A la aventura
+	Walt: ¡Voy a recuperar nuestros SERVICIOS!
+Warriotadora: ¡Tú puedes WALT!
+=> END

@@ -12,6 +12,7 @@ var is_jumping = false
 var is_dead = false
 var attack_cooldown = 1
 var can_attack = true
+var can_move = true
 
 #const SPEED = 100.0
 #const JUMP_VELOCITY = -300.0
@@ -24,15 +25,13 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 
-	#if is_attacking && !is_on_floor():
-		#print('no floor')
-	#if is_attacking && is_on_floor():
-		#print('floor')
-	# Handle jump.
+	if !can_move:
+		animated_sprite_2d.play("idle")
+		return
+
 	if Input.is_action_just_pressed("jump") && is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
-		print('start jumping')
 
 	if Input.is_action_just_pressed("attack") && is_on_floor() && can_attack:
 		start_attack()
@@ -106,3 +105,6 @@ func start_dead():
 func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		body.take_damage(25, global_position)
+		
+func set_can_move(value):
+	can_move = value

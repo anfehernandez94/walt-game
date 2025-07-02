@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://brkx6i0jquxgp"
+path="res://.godot/imported/service_brain_power.dialogue-d1cf85cad89c0c87da014c3983abab9e.tres"
+
+[deps]
+
+source_file="res://dialogues/service_brain_power.dialogue"
+dest_files=["res://.godot/imported/service_brain_power.dialogue-d1cf85cad89c0c87da014c3983abab9e.tres"]
+
+[params]
+
+defaults=true

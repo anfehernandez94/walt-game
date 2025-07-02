@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnbpm3b8koa73"
+path="res://.godot/imported/Metal Heart, Rusted Soul.mp3-ac1c282febe349ad93f1f77e8ee6c406.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Metal Heart, Rusted Soul.mp3"
+dest_files=["res://.godot/imported/Metal Heart, Rusted Soul.mp3-ac1c282febe349ad93f1f77e8ee6c406.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=120.0
+beat_count=12
+bar_beats=4

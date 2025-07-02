@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dw7hcg7sbsm1w"]
 
-[ext_resource type="Texture2D" uid="uid://b8328auumqlrq" path="res://assets/sprites/tilemap/LT Tilemap tiles.png" id="1_ffih7"]
+[ext_resource type="Texture2D" uid="uid://br4gqc5gsgvej" path="res://assets/sprites/tilemap/Gandalf/Floor Tiles1.png" id="1_ffih7"]
 [ext_resource type="Texture2D" uid="uid://bm0h13tfnifwp" path="res://assets/sprites/tilemap/tilemap.png" id="1_g8307"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
-size = Vector2(192, 56)
+size = Vector2(91, 28.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ba0x2"]
 texture = ExtResource("1_g8307")
@@ -250,10 +250,10 @@ sources/0 = SubResource("TileSetAtlasSource_ba0x2")
 position = Vector2(4, -1)
 texture = ExtResource("1_ffih7")
 region_enabled = true
-region_rect = Rect2(192, 64, 192, 64)
+region_rect = Rect2(193, 160, 94, 30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, -5.5)
+position = Vector2(4, -1.25)
 shape = SubResource("RectangleShape2D_nlgqw")
 one_way_collision = true
 

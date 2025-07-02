@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://brhav2qi3ouuf" path="res://scenes/killzone.tscn" id="8_icmn4"]
 [ext_resource type="PackedScene" uid="uid://cjmp7e1kwdc6r" path="res://scenes/enemy_01.tscn" id="9_62sbm"]
 [ext_resource type="AudioStream" uid="uid://46psg764pq60" path="res://assets/audio/music/Lost Circuits.mp3" id="10_gcsue"]
-[ext_resource type="PackedScene" uid="uid://blcl283vlrv1q" path="res://scenes/item.tscn" id="11_cypj3"]
+[ext_resource type="PackedScene" uid="uid://blcl283vlrv1q" path="res://scenes/item_01.tscn" id="11_cypj3"]
 [ext_resource type="PackedScene" uid="uid://c8n560fb2873m" path="res://scenes/panel_score.tscn" id="12_ksitj"]
 [ext_resource type="PackedScene" uid="uid://dw7hcg7sbsm1w" path="res://scenes/platform2.tscn" id="14_pdr83"]
 

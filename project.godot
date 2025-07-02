@@ -20,6 +20,11 @@ config/icon="uid://detwwyqniy3nl"
 
 GameManager="*res://scripts/game_manager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+TransitionScreen="*res://scenes/transition_screen.tscn"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://scenes/dialogues/balloon.tscn"
 
 [display]
 
@@ -82,10 +87,15 @@ move_up={
 ]
 }
 
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogues/01_intro.dialogue", "res://dialogues/03_intro.dialogue", "res://dialogues/service_brain_power.dialogue", "res://dialogues/service_hustle_muscle.dialogue", "res://dialogues/service_time_off.dialogue", "res://dialogues/02_intro.dialogue")
+
 [layer_names]
 
 2d_physics/layer_2="Player"
-2d_physics/layer_3="Enemy & Bullet"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Player Bullet"
 
 [rendering]
 

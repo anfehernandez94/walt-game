@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://s7e5ceul3pog"]
 
 [ext_resource type="Script" uid="uid://cb8fje1xgnj5a" path="res://scripts/player_ship.gd" id="1_ys4te"]
-[ext_resource type="Texture2D" uid="uid://camar0774egnh" path="res://assets/sprites/ship_fire_transparent.png" id="2_ys4te"]
+[ext_resource type="Texture2D" uid="uid://camar0774egnh" path="res://assets/sprites/characters/ship_fire_transparent.png" id="2_ys4te"]
 [ext_resource type="AudioStream" uid="uid://plgjcj33n1x3" path="res://assets/audio/sounds/spaceTrash5.ogg" id="4_evoqb"]
 [ext_resource type="AudioStream" uid="uid://bbjnfndyi8lmq" path="res://assets/audio/sounds/Retro Charge StereoUP 01.wav" id="5_c752a"]
 
@@ -112,6 +112,7 @@ _data = {
 z_index = 5
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_ys4te")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
