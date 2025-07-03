@@ -103,9 +103,6 @@ _data = {
 &"move_menu": SubResource("Animation_8ln24")
 }
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o50lk"]
-blend_mode = 1
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
 atlas = ExtResource("11_flqon")
 region = Rect2(0, 0, 96, 96)
@@ -652,6 +649,9 @@ animations = [{
 "name": &"default",
 "speed": 9.0
 }]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o50lk"]
+blend_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w0rbc"]
 atlas = ExtResource("2_j7ex8")
@@ -1209,17 +1209,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Ship" parent="MarginContainer" instance=ExtResource("2_wu84c")]
-position = Vector2(-191, 838)
-rotation = -0.42237
-scale = Vector2(0.8, 0.8)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/Ship"]
-libraries = {
-&"": SubResource("AnimationLibrary_oa1go")
-}
-autoplay = "move_menu"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1271,6 +1260,24 @@ text = "Salir"
 stream = ExtResource("12_flqon")
 autoplay = true
 
+[node name="Ship" parent="." instance=ExtResource("2_wu84c")]
+position = Vector2(-191, 838)
+rotation = -0.42237
+scale = Vector2(0.8, 0.8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ship"]
+libraries = {
+&"": SubResource("AnimationLibrary_oa1go")
+}
+autoplay = "move_menu"
+
+[node name="Planet" type="AnimatedSprite2D" parent="."]
+position = Vector2(1698, 108)
+scale = Vector2(2, 2.0401)
+sprite_frames = SubResource("SpriteFrames_w0rbc")
+autoplay = "default"
+frame_progress = 0.660031
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -1301,18 +1308,12 @@ position = Vector2(1458, 304)
 scale = Vector2(4, 4)
 texture = ExtResource("17_gw5y6")
 
-[node name="Planet" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1698, 108)
-scale = Vector2(2, 2.0401)
-sprite_frames = SubResource("SpriteFrames_w0rbc")
-autoplay = "default"
-frame_progress = 0.660031
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground"]
-position = Vector2(959.889, 541.5)
+position = Vector2(960, 542)
 scale = Vector2(3.00278, 3.00278)
 sprite_frames = SubResource("SpriteFrames_e3uov")
-frame_progress = 0.323296
+autoplay = "default"
+frame_progress = 0.328209
 
 [node name="Fontground" type="TileMapLayer" parent="ParallaxBackground"]
 scale = Vector2(2, 2)

@@ -79,6 +79,7 @@ func start_dead():
 	animated_sprite_2d.stop()
 	direction = 0
 	killzone.monitoring = false
+	await get_tree().create_timer(0.5).timeout
 	emit_signal("boss_died")
 #	todo Animation destroyed
-	#queue_free()
+	queue_free()

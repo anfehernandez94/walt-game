@@ -1,0 +1,11 @@
+~ start
+Warriotadora: [wait=1]¡Lo logramos![wait=1]
+	Somos el mejor equipo.
+Warriotadora: Con los tres SERVICIOS ya estamos completos.
+Walt: Si, me siento mucho mejor.
+Warriotadora: Ya todos los sistemas están al 100%
+Walt: Mi mente y mi cuerpo se sienten renovados.
+Warriotadora: No olvides el descanso.
+Walt: Tienes razón, volvamos a casa, hasta la siguiente misión.
+Walt | Warriotadora: ¡¡ We Are Lean and Technology !! [wait=1]
+=> END

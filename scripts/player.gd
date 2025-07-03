@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("idle")
 		return
 
-	if Input.is_action_just_pressed("jump") && is_on_floor():
+	if Input.is_action_just_pressed("jump") && is_on_floor() && !is_attacking:
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
 
@@ -108,3 +108,7 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 		
 func set_can_move(value):
 	can_move = value
+
+
+func _on_hit_area_body_entered(body: Node2D) -> void:
+	print("hit player")

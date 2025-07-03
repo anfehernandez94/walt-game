@@ -101,12 +101,10 @@ target_position = Vector2(-10, 0)
 [node name="EnemyArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
-visible = false
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_l530j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_l530j")
 

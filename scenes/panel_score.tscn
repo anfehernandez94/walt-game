@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8n560fb2873m"]
 
-[ext_resource type="Texture2D" uid="uid://ccl7q848op1t1" path="res://assets/sprites/coin.png" id="1_akt6s"]
+[ext_resource type="Texture2D" uid="uid://bnfxgtl4sos2c" path="res://assets/sprites/items/kudo.png" id="1_7ibnw"]
 [ext_resource type="FontFile" uid="uid://kvmp4u6ofv88" path="res://assets/fonts/Kenney Mini Square.ttf" id="2_7ibnw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ibnw"]
@@ -30,8 +30,8 @@ custom_minimum_size = Vector2(22, 22)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_akt6s")
-stretch_mode = 4
+texture = ExtResource("1_7ibnw")
+expand_mode = 1
 
 [node name="LabelScore" type="Label" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true

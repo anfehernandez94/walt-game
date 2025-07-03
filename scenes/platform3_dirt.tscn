@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjoq8uqd4btll"]
+
+[ext_resource type="Texture2D" uid="uid://br4gqc5gsgvej" path="res://assets/sprites/tilemap/Gandalf/Floor Tiles1.png" id="1_44wdj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
+size = Vector2(91, 28.5)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, -1)
+texture = ExtResource("1_44wdj")
+region_enabled = true
+region_rect = Rect2(193, 352, 94, 31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -1.25)
+shape = SubResource("RectangleShape2D_nlgqw")
+one_way_collision = true

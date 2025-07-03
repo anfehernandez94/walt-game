@@ -11,6 +11,7 @@ extends Node2D
 var timer: Timer
 
 func _ready():
+	await get_tree().create_timer(0.5).timeout
 	timer = Timer.new()
 	timer.one_shot = false
 	timer.autostart = true

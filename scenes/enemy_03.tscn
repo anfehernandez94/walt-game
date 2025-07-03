@@ -39,7 +39,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l530j"]
-size = Vector2(16, 12)
+size = Vector2(20.25, 13.25)
 
 [node name="Enemy03" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -57,19 +57,13 @@ flip_h = true
 [node name="Killzone" parent="." instance=ExtResource("4_t1emn")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-1, -1)
+position = Vector2(3, -1)
 shape = SubResource("RectangleShape2D_l530j")
-
-[node name="EnemyArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
-visible = false
-position = Vector2(-1, -1)
-shape = SubResource("RectangleShape2D_l530j")
+debug_color = Color(0.811765, 0, 0.309804, 0.835294)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-1, -1)
+position = Vector2(3, -1)
+scale = Vector2(0.717655, 0.636368)
 shape = SubResource("RectangleShape2D_l530j")
 
 [node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
@@ -79,4 +73,4 @@ stream = ExtResource("5_yyhqq")
 stream = ExtResource("6_8vyo4")
 volume_db = -10.0
 
-[connection signal="area_entered" from="EnemyArea" to="." method="_on_area_2d_area_entered"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://blcl283vlrv1q"]
+[gd_scene load_steps=9 format=3 uid="uid://075i35006wpw"]
 
-[ext_resource type="Script" uid="uid://cxn6303n5vs1b" path="res://scripts/item_01.gd" id="1_s8enn"]
-[ext_resource type="Texture2D" uid="uid://cbwxo6opavabg" path="res://assets/sprites/items/Coins-Sheet.png" id="2_6muww"]
-[ext_resource type="AudioStream" uid="uid://c070pw7nt4amh" path="res://assets/audio/sounds/confirmation_004.ogg" id="3_6muww"]
+[ext_resource type="Script" uid="uid://d2xfoi53d8rhw" path="res://scripts/item_02.gd" id="1_exlxi"]
+[ext_resource type="Texture2D" uid="uid://cbwxo6opavabg" path="res://assets/sprites/items/Coins-Sheet.png" id="2_t7kdw"]
+[ext_resource type="AudioStream" uid="uid://c070pw7nt4amh" path="res://assets/audio/sounds/confirmation_004.ogg" id="3_034mh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s8enn"]
 radius = 96.0833
@@ -73,15 +73,15 @@ _data = {
 &"sound": SubResource("Animation_vljjh")
 }
 
-[node name="Item01" type="Area2D"]
+[node name="Item02" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_s8enn")
+script = ExtResource("1_exlxi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
-texture = ExtResource("2_6muww")
+texture = ExtResource("2_t7kdw")
 region_enabled = true
-region_rect = Rect2(69, 7, 53, 53)
+region_rect = Rect2(5, 7, 53, 53)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_s8enn")
@@ -92,6 +92,6 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_6muww")
+stream = ExtResource("3_034mh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
