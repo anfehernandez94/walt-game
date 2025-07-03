@@ -4,7 +4,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 var speed = 50
-var health = 10
+var health = 400
 var direction = 1
 var cur_speed = SPEED
 var is_hit := false

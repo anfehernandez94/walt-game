@@ -2,10 +2,15 @@ extends Area2D
 
 const DIALOG_TIME = preload("res://dialogues/service_time_off.dialogue")
 
-@export var intro_end := preload("res://scenes/intro_end.tscn")
+@export var intro_end := "res://scenes/intro_end.tscn"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var is_dialogue = false
+
 func _on_body_entered(body: Node2D) -> void:
+	if is_dialogue:
+		return
+	is_dialogue = true
 	GameManager.end_level()
 	animation_player.play("sound")
 	
@@ -25,5 +30,5 @@ func _on_dialogue_ended(dialogue):
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	print("end level")
-	get_tree().change_scene_to_packed(intro_end)
+	get_tree().change_scene_to_file(intro_end)
  

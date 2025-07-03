@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgbhlfctx1l88"
+path="res://.godot/imported/Retro Music - WolfSynth - Tempo Normal - 02.mp3-8039b502f6a5f05fb24c11c47257b5bb.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Retro Music - WolfSynth - Tempo Normal - 02.mp3"
+dest_files=["res://.godot/imported/Retro Music - WolfSynth - Tempo Normal - 02.mp3-8039b502f6a5f05fb24c11c47257b5bb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://xbmkgw26tp4v"]
+[gd_scene load_steps=25 format=3 uid="uid://xbmkgw26tp4v"]
 
 [ext_resource type="Script" uid="uid://dn0by2vwunmer" path="res://scripts/enemy_02.gd" id="1_4n8bs"]
 [ext_resource type="Texture2D" uid="uid://3m1q7pudevn2" path="res://assets/sprites/characters/enemy4.png" id="2_4n8bs"]
@@ -117,6 +117,44 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4n8bs"]
 size = Vector2(36, 34)
 
+[sub_resource type="Animation" id="Animation_llxqc"]
+resource_name = "rotate"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [6.28319, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3m726"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g4hox"]
+_data = {
+&"RESET": SubResource("Animation_3m726"),
+&"rotate": SubResource("Animation_llxqc")
+}
+
 [node name="Enemy02" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 10
@@ -124,10 +162,8 @@ script = ExtResource("1_4n8bs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x7q62")
-animation = &"dead"
+animation = &"bullet"
 autoplay = "bullet"
-frame = 7
-frame_progress = 1.0
 
 [node name="Killzone" parent="." instance=ExtResource("3_3m726")]
 position = Vector2(0, 6)
@@ -149,5 +185,11 @@ volume_db = -10.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_4n8bs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g4hox")
+}
+autoplay = "rotate"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,7 +1,7 @@
 extends Control
 
 const _01_INTRO = preload("res://dialogues/01_intro.dialogue")
-@export var level_01:= preload("res://levels/level_01.tscn")
+@export var level_01:= "res://levels/level_01.tscn"
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
@@ -13,4 +13,4 @@ func _on_dialogue_ended(dialogue):
 	GameManager.fade_out_music(audio_stream_player_2d)
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	get_tree().change_scene_to_packed(level_01)
+	get_tree().change_scene_to_file(level_01)

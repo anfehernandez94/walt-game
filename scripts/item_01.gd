@@ -2,7 +2,7 @@ extends Area2D
 
 const DIALOG_BRAIN = preload("res://dialogues/service_brain_power.dialogue")
 
-@export var intro_level_02 := preload("res://scenes/intro_level_02.tscn")
+@export var intro_level_02 := "res://scenes/intro_level_02.tscn"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var is_dialogue = false
@@ -26,5 +26,5 @@ func _on_dialogue_ended(dialogue):
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	print("level2 from item")
-	get_tree().change_scene_to_packed(intro_level_02)
+	get_tree().change_scene_to_file(intro_level_02)
  

@@ -5920,7 +5920,7 @@ tile_map_data = PackedByteArray("AAD7/wAAAAABAAAAAAD8/wAAAAABAAAAAAD9/wAAAAABAAA
 tile_set = SubResource("TileSet_t6f3f")
 
 [node name="Player" parent="." instance=ExtResource("5_d3o6j")]
-position = Vector2(-545.019, -1075.43)
+position = Vector2(-269.536, -39.4191)
 scale = Vector2(1, 1)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Player"]

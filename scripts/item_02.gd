@@ -5,7 +5,12 @@ const DIALOG_MUSCLE = preload("res://dialogues/service_hustle_muscle.dialogue")
 @export var intro_level_03 := preload("res://scenes/intro_level_03.tscn")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var is_dialogue = false
+
 func _on_body_entered(body: Node2D) -> void:
+	if is_dialogue:
+		return
+	is_dialogue = true
 	GameManager.end_level()
 	animation_player.play("sound")
 	

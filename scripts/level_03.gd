@@ -4,6 +4,7 @@ extends Node2D
 @onready var boss_01: CharacterBody2D = $Boss01
 @onready var enemy_spawner: Node2D = $EnemySpawner
 @onready var item_03: Area2D = $Item03
+@onready var animation_player_2: AnimationPlayer = $Item03/AnimationPlayer2
 
 
 func _ready() -> void:
@@ -15,3 +16,4 @@ func end_level():
 	await get_tree().create_timer(0.5).timeout
 	item_03.monitoring = true
 	item_03.visible = true
+	animation_player_2.play("visible")

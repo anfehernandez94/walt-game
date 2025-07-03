@@ -2,7 +2,7 @@
 Warriotadora: [wait=1]¡Súper!
 	Ya tenemos el primer SERVICIO.
 Warriotadora: Con el BRAIN POWER puedo poner a funcionar todo el panel de control.
-	Y ya puedo teletransportarte al siguiente SERVICIO.
+	Ya puedo teletransportarte al siguiente SERVICIO.
 Walt: Eso facilita las cosas.
 Warriotadora: Cargando...
 Warriotadora: Aunque los sistemas no están al 100%
@@ -24,7 +24,7 @@ Walt:  ...
 Warriotadora: ...
 Warriotadora: ¿Te puedo teletransportar ya?
 - SI
-	Walt: Nací listo, teletransportame. => teletransporte
+	Walt: Nací listo, teletranspórtame. => teletransporte
 - NO
 	Walt: ¿Hay otra opcióm? => otra_opcion
 ~ teletransporte

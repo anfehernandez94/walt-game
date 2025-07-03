@@ -1,6 +1,9 @@
 ~ start
 Warriotadora: [wait=1]¡Buen trabajo WALT![wait=1]
 Warriotadora: Ya tenemos suficiente fuerza para hacer volar la nave, encender el radar y activar las defensas.
+if GameManager.score > 0:
+	Warriotadora: Además encontraste {{GameManager.score}} KUDOS
+		Eso aumentará el poder de nuestras defensas.
 Warriotadora: Solo nos falta un servicio.
 Warriotadora: Y con el radar funcionando, lo puedo localizar.
 Warriotadora: Localizando[wait=0.2].[wait=0.2].[wait=0.2].

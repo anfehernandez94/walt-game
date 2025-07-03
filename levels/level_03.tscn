@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://i5kughnf8rhp"]
+[gd_scene load_steps=36 format=3 uid="uid://i5kughnf8rhp"]
 
 [ext_resource type="Script" uid="uid://c8cy5n0byviqr" path="res://scripts/level_03.gd" id="1_2wlag"]
 [ext_resource type="Script" uid="uid://tuogonxqxo8n" path="res://scripts/game_manager.gd" id="2_3ew82"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b44adefmqdl5k" path="res://assets/sprites/background/Starry background  - Layer 03 - Stars.png" id="6_gj5ie"]
 [ext_resource type="Script" uid="uid://ceq81bdk7s821" path="res://scripts/enemy_spawner.gd" id="7_j4ks3"]
 [ext_resource type="PackedScene" uid="uid://qucarv55v55b" path="res://scenes/boss_01.tscn" id="8_5pqto"]
-[ext_resource type="AudioStream" uid="uid://46psg764pq60" path="res://assets/audio/music/Lost Circuits.mp3" id="10_jx2nq"]
+[ext_resource type="AudioStream" uid="uid://dgbhlfctx1l88" path="res://assets/audio/music/Retro Music - WolfSynth - Tempo Normal - 02.mp3" id="8_wrb7r"]
 [ext_resource type="PackedScene" uid="uid://c8n560fb2873m" path="res://scenes/panel_score.tscn" id="12_phrv1"]
 [ext_resource type="PackedScene" uid="uid://cgnjqi78g2n14" path="res://scenes/item_03.tscn" id="13_5pqto"]
 
@@ -3158,7 +3158,7 @@ distance = 88.0
 size = Vector2(20, 549)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3bqp"]
-size = Vector2(240, 479)
+size = Vector2(203, 421)
 
 [sub_resource type="Animation" id="Animation_5mixh"]
 length = 0.001
@@ -3173,6 +3173,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.25, 0.25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_t6f3f"]
@@ -3191,10 +3203,26 @@ tracks/0/keys = {
 "values": [Vector2(0.25, 0.25), Vector2(0.3, 0.3)]
 }
 
+[sub_resource type="Animation" id="Animation_5pqto"]
+resource_name = "visible"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d8db5"]
 _data = {
 &"RESET": SubResource("Animation_5mixh"),
-&"move": SubResource("Animation_t6f3f")
+&"move": SubResource("Animation_t6f3f"),
+&"visible": SubResource("Animation_5pqto")
 }
 
 [node name="Game" type="Node2D"]
@@ -3232,7 +3260,7 @@ limit_bottom = 360
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1178, -507)
-stream = ExtResource("10_jx2nq")
+stream = ExtResource("8_wrb7r")
 autoplay = true
 max_distance = 4096.0
 bus = &"Music"
@@ -3293,12 +3321,12 @@ position = Vector2(0, -3.49999)
 shape = SubResource("RectangleShape2D_b2w0k")
 
 [node name="BossMovementArea" type="StaticBody2D" parent="."]
-position = Vector2(795, 1)
+position = Vector2(761, -5)
 collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossMovementArea"]
-position = Vector2(-20, 7.5)
+position = Vector2(-38.5, -3.5)
 shape = SubResource("RectangleShape2D_r3bqp")
 
 [node name="Boss01" parent="." instance=ExtResource("8_5pqto")]
@@ -3307,6 +3335,7 @@ scale = Vector2(2, 2)
 
 [node name="Item03" parent="." instance=ExtResource("13_5pqto")]
 visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(769, -1)
 scale = Vector2(0.25, 0.25)
 monitoring = false
