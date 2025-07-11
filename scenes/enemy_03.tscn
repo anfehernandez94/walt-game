@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://31almc4rknd4"]
+[gd_scene load_steps=14 format=3 uid="uid://31almc4rknd4"]
 
 [ext_resource type="Script" uid="uid://ceeus4p4cbo83" path="res://scripts/enemy_03.gd" id="1_8ijlg"]
 [ext_resource type="Texture2D" uid="uid://qih5aapsvlh3" path="res://assets/sprites/characters/LT Enemy 3.png" id="2_8ijlg"]
@@ -18,6 +18,18 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("2_8ijlg")
 region = Rect2(128, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ijlg"]
+atlas = ExtResource("2_8ijlg")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1emn"]
+atlas = ExtResource("2_8ijlg")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyhqq"]
+atlas = ExtResource("2_8ijlg")
+region = Rect2(128, 64, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_x7q62"]
 animations = [{
 "frames": [{
@@ -36,6 +48,23 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ijlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1emn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyhqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ijlg")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l530j"]
@@ -50,8 +79,8 @@ script = ExtResource("1_8ijlg")
 position = Vector2(0, -2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_x7q62")
+animation = &"hit"
 autoplay = "default"
-frame_progress = 0.000682758
 flip_h = true
 
 [node name="Killzone" parent="." instance=ExtResource("4_t1emn")]

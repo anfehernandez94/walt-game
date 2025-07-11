@@ -3330,7 +3330,7 @@ position = Vector2(-38.5, -3.5)
 shape = SubResource("RectangleShape2D_r3bqp")
 
 [node name="Boss01" parent="." instance=ExtResource("8_5pqto")]
-position = Vector2(763, 18)
+position = Vector2(691, 11)
 scale = Vector2(2, 2)
 
 [node name="Item03" parent="." instance=ExtResource("13_5pqto")]

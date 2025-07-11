@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://o0uiej7xp231"]
+[gd_scene load_steps=25 format=3 uid="uid://o0uiej7xp231"]
 
 [ext_resource type="Script" uid="uid://bawp8d7gq5cgq" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cfki0tmp7ha01" path="res://assets/sprites/characters/LT Character asset v2.png" id="2_dqkch"]
-[ext_resource type="Texture2D" uid="uid://dwl40hbcr2ivv" path="res://assets/sprites/characters/LT Character asset.png" id="3_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://plgjcj33n1x3" path="res://assets/audio/sounds/spaceTrash5.ogg" id="4_dqkch"]
 [ext_resource type="AudioStream" uid="uid://bbjnfndyi8lmq" path="res://assets/audio/sounds/Retro Charge StereoUP 01.wav" id="5_qlg0r"]
 
@@ -34,17 +33,13 @@ region = Rect2(0, 209, 64, 64)
 atlas = ExtResource("2_dqkch")
 region = Rect2(64, 209, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
-atlas = ExtResource("3_qhqgy")
-region = Rect2(192, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
+atlas = ExtResource("2_dqkch")
+region = Rect2(128, 68, 64, 72)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
 atlas = ExtResource("2_dqkch")
 region = Rect2(64, 68, 64, 72)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
-atlas = ExtResource("2_dqkch")
-region = Rect2(128, 68, 64, 72)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_dqkch")
@@ -116,16 +111,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f1ej7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fulsm")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_4r5pv")
 }],
 "loop": true,
-"name": &"jump",
+"name": &"jump_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fulsm")
+}],
+"loop": false,
+"name": &"jump_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -188,7 +185,7 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"idle"
+animation = &"jump_up"
 autoplay = "idle"
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]

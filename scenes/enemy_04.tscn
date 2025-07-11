@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cq1tx0xbahflo"]
+[gd_scene load_steps=19 format=3 uid="uid://cq1tx0xbahflo"]
 
 [ext_resource type="Script" uid="uid://cnppepyqkpnb4" path="res://scripts/enemy_04.gd" id="1_xn85h"]
 [ext_resource type="Texture2D" uid="uid://dsh3l7meympli" path="res://assets/sprites/characters/LT Enemy 2.png" id="2_f403g"]
@@ -35,6 +35,18 @@ region = Rect2(48, 0, 24, 24)
 atlas = ExtResource("3_nrsoy")
 region = Rect2(72, 0, 24, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn85h"]
+atlas = ExtResource("2_f403g")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f403g"]
+atlas = ExtResource("2_f403g")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7051a"]
+atlas = ExtResource("2_f403g")
+region = Rect2(128, 64, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_x7q62"]
 animations = [{
 "frames": [{
@@ -67,6 +79,20 @@ animations = [{
 "loop": true,
 "name": &"default_1",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn85h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f403g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7051a")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l530j"]
@@ -80,7 +106,6 @@ script = ExtResource("1_xn85h")
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_x7q62")
 autoplay = "default"
-frame_progress = 0.531924
 
 [node name="Killzone" parent="." instance=ExtResource("4_bfa7o")]
 

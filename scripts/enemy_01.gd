@@ -37,6 +37,7 @@ func take_damage(amount : float, from_position := Vector2.ZERO):
 # Change the direction
 func start_hit_reaction(from_position: Vector2):
 	is_hit = true
+	animated_sprite_2d.play("hit")
 	hit_audio.play()
 	cur_speed = 40 * 0.1
 	direction = direction * (-1)
@@ -44,6 +45,7 @@ func start_hit_reaction(from_position: Vector2):
 	await get_tree().create_timer(0.1).timeout
 	cur_speed = SPEED
 	is_hit = false
+	animated_sprite_2d.play("default")
 
 func start_dead():
 	dead_audio.play()

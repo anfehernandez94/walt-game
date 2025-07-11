@@ -60,11 +60,11 @@ func take_damage(amount : float, from_position := Vector2.ZERO):
 
 func start_hit_reaction(from_position: Vector2):
 	is_hit = true
-	print('hit')
-	
+	animated_sprite_2d.play("hit")
 	hit_audio.play()
 	await get_tree().create_timer(0.1).timeout
 	is_hit = false
+	animated_sprite_2d.play("default")
 
 func start_dead():
 	print('dead')

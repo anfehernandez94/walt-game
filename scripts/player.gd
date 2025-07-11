@@ -55,7 +55,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		if !is_attacking:
 			velocity += get_gravity() * delta
-			animated_sprite_2d.play("jump")
+			if velocity.y < 0:
+				animated_sprite_2d.play("jump_up")
+			else:
+				animated_sprite_2d.play("jump_down")
+			#animated_sprite_2d.play("jump")
 		
 	if direction:
 		velocity.x = direction * SPEED

@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://bgwt5u0u1qkjf"]
+[gd_scene load_steps=77 format=4 uid="uid://bgwt5u0u1qkjf"]
 
 [ext_resource type="Script" uid="uid://drmtulis4qjjc" path="res://scripts/level_02.gd" id="1_4c076"]
 [ext_resource type="Texture2D" uid="uid://fnrw273w3sot" path="res://assets/sprites/background/Winter BG/GandalfHardcore Background layers_layer 5.png" id="3_62sbm"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cjmp7e1kwdc6r" path="res://scenes/enemy_01.tscn" id="9_62sbm"]
 [ext_resource type="Texture2D" uid="uid://br4gqc5gsgvej" path="res://assets/sprites/tilemap/Gandalf/Floor Tiles1.png" id="9_hmhyh"]
 [ext_resource type="Texture2D" uid="uid://mvqxypl32fo6" path="res://assets/sprites/tilemap/Gandalf/Other Tiles1.png" id="10_jhp1k"]
-[ext_resource type="PackedScene" uid="uid://blcl283vlrv1q" path="res://scenes/item_01.tscn" id="11_cypj3"]
 [ext_resource type="Texture2D" uid="uid://b88ldyjxvr6le" path="res://assets/sprites/tilemap/Gandalf/Decor.png" id="11_oaki6"]
 [ext_resource type="Texture2D" uid="uid://ceg35pwsrptpv" path="res://assets/sprites/tilemap/Gandalf/Pine Trees.png" id="12_jhp1k"]
 [ext_resource type="PackedScene" uid="uid://c8n560fb2873m" path="res://scenes/panel_score.tscn" id="12_ksitj"]
@@ -6336,7 +6335,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Player" parent="." instance=ExtResource("5_5l6ou")]
-position = Vector2(346, -2480)
+position = Vector2(393, -2455)
 scale = Vector2(1, 1)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Player"]
@@ -6408,17 +6407,6 @@ shape = SubResource("RectangleShape2D_jhp1k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone/Killzone3"]
 position = Vector2(1735, -965.5)
 shape = SubResource("RectangleShape2D_oaki6")
-
-[node name="Item" parent="." instance=ExtResource("11_cypj3")]
-z_index = 1
-position = Vector2(-643.122, -1093.63)
-scale = Vector2(0.25, 0.25)
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Item"]
-libraries = {
-&"": SubResource("AnimationLibrary_d8db5")
-}
-autoplay = "move"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(4, 4)
